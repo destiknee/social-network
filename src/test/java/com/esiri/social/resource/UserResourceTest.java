@@ -59,19 +59,33 @@ public class UserResourceTest {
 	}
 	
 	@Test
-	public void testAddMessageUserNameNullContentNull() {
+	public void testAddMessageInvalidInput() {
 		
+		// empty content
 		Response result = underTest.addMessage("bob", "");
 		Assert.assertTrue(result.getStatus() == Status.BAD_REQUEST.getStatusCode());
 		
-		
+		// null content
 		result = underTest.addMessage("bob", null);
 		Assert.assertTrue(result.getStatus() == Status.BAD_REQUEST.getStatusCode());
 		
+		// null user
 		result = underTest.addMessage(null, "valid content");
 		Assert.assertTrue(result.getStatus() == Status.BAD_REQUEST.getStatusCode());
 		
-		result = underTest.addMessage("bob", "valid content");
+		// content greater than 140 characters
+		String content = "the big brown fox jumped over the lazy dog. "
+				+ "the big brown fox jumped over the lazy dog. "
+				+ "the big brown fox jumped over the lazy dog. "
+				+ "the big brown fox jumped over the lazy dog";
+		result = underTest.addMessage("bob", content);
+		Assert.assertTrue(result.getStatus() == Status.BAD_REQUEST.getStatusCode());
+	}
+	
+	@
+	Test
+	public void testAddMessageValidInput() {
+		Response result = underTest.addMessage("bob", "valid content");
 		Assert.assertTrue(result.getStatus() == Status.CREATED.getStatusCode());
 	}
 
@@ -165,7 +179,7 @@ public class UserResourceTest {
 		Response result = underTest.unfollowUser("bob", "mary");
 		Assert.assertTrue(result.getStatus() == Status.OK.getStatusCode());
 		
-		//second attempt at unnfollowing an already unfollowed user
+		//second attempt at unfollowing an already unfollowed user
 		result = underTest.unfollowUser("bob", "mary");
 		Assert.assertTrue(result.getStatus() == Status.BAD_REQUEST.getStatusCode());
 	}

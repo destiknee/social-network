@@ -50,7 +50,7 @@ public class User {
 	}
 	
 	/* merge list utility function merges an already sorted list of posts
-	 * return a reverse chronologically sorted list containing posts from a and b*/
+	 * returns a reverse chronologically sorted list containing posts from a and b*/
 	private static List<Post> mergePosts(List<Post> a, List<Post> b){
 		if(a == null) return b;
 		if(b == null) return a;

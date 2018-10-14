@@ -38,10 +38,6 @@ public class Post implements Comparable<Post>{
 		timeStamp = instant;
 	}
 	
-//	public Instant getInstant() {
-//		return timeStamp;
-//	}
-
 	@Override
 	public int compareTo(Post p2) {
 		return p2.timeStamp.compareTo(this.timeStamp);
