@@ -41,5 +41,5 @@ followee = kate <br />
 1. a user name is case insensitive so that posting a message with BOB, bob or bOB, all have the same effect <br/>
 2. user names are used as unique ID for simplicity in this application <br/>
 3. a user cannot follow or unfollow themselves <br/>
-4. based on the initial requirement, every user has at least one post (firs post when creating user) <br/>
+4. based on the initial requirement, every user has at least one post (first post when creating user) <br/>
 5. user timeline is backed by an ArrayList hence has a maximum size defined by Integer.MAX_VALUE. Future enhancements will see this subsituted, possibly for a linkedlist, as the number of users increases.<br/>
