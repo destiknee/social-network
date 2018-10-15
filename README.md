@@ -8,11 +8,12 @@ Before running please ensure that your JAVA_HOME environment variable is set to 
 
 <b>To run the social-network application:</b>
 1. checkout the codebase to a suitable local directory
-2. open command prompt/shell in the directory
-3. build and deploy the application using the gradle wrapper command:<br/>
+2. navigate into the social-network folder
+3. open command prompt/shell in the directory
+4. build and deploy the application using the gradle wrapper command:<br/>
 	<t> <b>a. "./gradlew clean bootRun" </b>(Linux/Mac)<br/>
 	<t> <b>b. ".\gradlew clean bootRun" </b>(Windows) <br/>
-4. after the build and deploy is done, you should now be able to hit the end points <br/>
+5. after the build and deploy is done, you should now be able to hit the end points <br/>
 
 
 <h3>END POINTS  (port = 8080) </h3>
